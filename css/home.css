@@ -33,12 +33,7 @@ body {
 	padding: 20px;
 }
 
-.row.max-auto.my-5{
-	position: relative;
-	margin-top: -50%;
-}
-
-.play-again {
+.jogar {
 	position: relative;
 	background-color: white;
 	font-family: 'Roboto', sans-serif;
@@ -54,27 +49,27 @@ body {
 	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-.play-again:hover {
+.jogar:hover {
 	background-color: #02ccba;
 	cursor: pointer;
 }
 
-.facil{
+.facil {
 	color:#00b335;
 	font-size: 25px;
 }
 
-.normal{
+.normal {
 	color:#333;
 	font-size: 25px;
 }
 
-.dificil{
+.dificil {
 	color: #ff424e;
 	font-size: 25px;
 }
   
-.ajust{
+.ajust {
 	padding: 150px;
 }
 
