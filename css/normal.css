@@ -1,0 +1,334 @@
+html {
+	box-sizing: border-box;
+	
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+    background:linear-gradient(-45deg, #ff1c1c, #ff5656);
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	
+}
+
+.container {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.p-top {
+    padding-top: 25px;
+}
+
+h1 {
+	font-weight: 300;
+	font-size: 50px;
+}
+
+.show {
+	visibility: visible !important;
+	opacity: 1 !important;
+}
+
+.painel {
+	width: 50%;
+    height: 0px;
+	position: relative;
+    margin-top: 1%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-flow: row wrap;
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+.painel .restart {
+	float: right;
+	cursor: pointer;
+}
+
+.movi {
+	position: relative;
+	margin-left: 25%;
+	margin-right: 25%;
+	font-size: 20px;
+}
+
+.nvm {
+	
+	position: relative;
+	margin-top: -10px;
+	float: right;
+	margin-right: 2%;
+	font-size: 35px;
+}
+
+.deck {
+    position: relative;
+    margin-top: 2%;
+	width: 650px;
+	max-width: 100%;
+	min-height: 650px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	background: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	box-shadow: 6px 6px 0px 0 rgba(0, 0, 0, 0.5);
+	
+}
+
+.deck .card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	background-color: #d8d8d8;
+	background: linear-gradient(135deg, #eceddc 25%, transparent 25%),
+    linear-gradient(225deg, #eceddc 25%, transparent 25%),
+    linear-gradient(315deg, #eceddc 25%, transparent 25%),
+    linear-gradient(45deg, #eceddc 25%, transparent 25%); 
+    background-size: 30px 30px;
+	font-size: 0;
+	color: white;
+	cursor: pointer;
+	border-radius: 10px;
+	margin: 20px;
+}
+
+.deck .card.open {
+	transform: rotateY(0);
+	background: #00b1f4;
+	cursor: default;
+	animation-name: flipInY;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+.deck .card.show {
+	font-size: 32px;
+}
+
+.deck .card.match {
+	cursor: default;
+	background:#00b335;
+	font-size: 32px;
+	animation-name: rubberBand;
+	-webkit-backface-visibility: visible;
+	backface-visibility: visible;
+	animation-duration: .75s;
+}
+
+.deck .card.unmatched {
+	animation-name: pulse;
+	-webkit-backface-visibility: visible;
+	backface-visibility: visible;
+	animation-duration: .75s;
+	background:#ff424e;
+}
+
+.deck .card.disabled {
+	pointer-events: none;
+}
+
+#paraben-popup {
+	position: relative;
+	width: 100%;
+	height: 900px;
+	margin-top: -920px;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0,0,0,0.7);
+	visibility: hidden;
+	opacity: 0;
+}
+
+#paraben-popup .popup {
+    position: relative;
+	padding: 20px;
+	background:linear-gradient(-45deg, #ff1c1c, #ff5656);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+#paraben-popup h1 {
+	margin-top: 13%;
+}
+#paraben-popup h2 {
+	margin: 0;
+}
+
+#paraben-popup .summary {
+	margin-top: -10px;
+	margin-bottom: 30px;
+	font-size: 1.25rem;
+}
+
+#jogar {
+	background-color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.25rem;
+	color: rgb(0, 0, 0);
+	width: 300px;
+	height: 70px;
+	border-radius: 15px;
+	border: 0px solid;
+	padding: 10px 20px;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+#jogar:hover {
+	background-color: #02ccba;
+	cursor: pointer;
+}
+
+.jogar {
+	background-color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.25rem;
+	color: rgb(0, 0, 0);
+	width: 300px;
+	height: 70px;
+	border-radius: 15px;
+	border: 0px solid;
+	padding: 10px 20px;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.ajust {
+	padding: 150px;
+}
+
+.posi {
+    position: relative;
+    margin: auto;
+    font-size: 25px;
+	display: flex;
+	flex-flow: row wrap;
+	text-align: right;
+}
+
+.posi span{
+	font-weight: bold;
+	position: relative;
+	margin: auto;
+	margin-left: 20px;
+	border: 0px solid;
+	color: #ff424e;
+	background-color: white;
+	padding: 10px 20px;
+	border-radius: 10px;
+	height: 50px;
+	
+
+}
+
+@media only screen and (min-width: 600px) {
+
+	.deck {
+        padding: 15px;
+		
+	}
+
+	.deck .card {
+		width: 125px;
+		height: 125px;
+		margin: 0;
+	}
+	
+}
+
+@keyframes flipInY {
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		animation-timing-function: ease-in;
+		opacity: 0;
+	}
+
+	40% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		animation-timing-function: ease-in;
+	}
+
+	60% {
+		transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+		opacity: 1;
+	}
+
+	80% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+	}
+
+	to {
+		transform: perspective(400px);
+	}
+}
+
+@keyframes rubberBand {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, .95, 1);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+@keyframes pulse {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	50% {
+		transform: scale3d(1.2, 1.2, 1.2);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
