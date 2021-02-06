@@ -133,7 +133,10 @@ function enable() {
 // Parabenização
 
 function paraben() {
-	if(matchedCard.length == 16) {
+
+	//Mudança necessária para a apresentação da parabenização de "16" para "8"
+
+	if(matchedCard.length == 8) {
 		clearInterval(interval);
 		popup.classList.add("show");
 		document.getElementById("total-movi").innerHTML = movi;
